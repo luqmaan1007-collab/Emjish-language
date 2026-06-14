@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Emjish GPT Translator</title>
+</head>
+
+<body>
+
+<h2>🤖 Emjish GPT Translator</h2>
+
+<textarea id="text"></textarea><br>
+
+<select id="from">
+  <option value="swedish">Svenska</option>
+  <option value="english">English</option>
+  <option value="somali">Somali</option>
+</select>
+
+<select id="to">
+  <option value="emjish">Emjish</option>
+  <option value="swedish">Svenska</option>
+  <option value="english">English</option>
+  <option value="somali">Somali</option>
+</select>
+
+<button onclick="translate()">Translate</button>
+
+<pre id="out"></pre>
+
+<script>
+async function translate() {
+  const text = document.getElementById("text").value;
+  const from = document.getElementById("from").value;
+  const to = document.getElementById("to").value;
+
+  const res = await fetch("http://localhost:3000/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text, from, to })
+  });
+
+  const data = await res.json();
+  document.getElementById("out").innerText = data.result;
+}
+</script>
+
+</body>
+</html>
