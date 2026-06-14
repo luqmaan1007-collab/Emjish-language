@@ -103,3 +103,4 @@ Exempelmeningar
 "Mår du bra?"
 🙉⏩🚢🌊
 "Jag ska resa över havet med skepp.
+Emjiria Flag:<img src="file_00000000324471f4a40c3edafe181961.png" width="400" />
